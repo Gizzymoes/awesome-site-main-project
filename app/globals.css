@@ -155,6 +155,7 @@ h3 {
   height: 510px;
   margin-top: 190px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .event-wrapper {
@@ -198,20 +199,20 @@ h3 {
 }
 
 .button-text {
-  color: #fff;
   letter-spacing: -2px;
-  width: 670px;
   font-family: var(--font-roboto), sans-serif;
   font-size: 1.5rem;
   line-height: 100%;
   text-decoration: none;
+  margin-right: 10px; /* Add some space between text and icon */
 }
 
 .button {
-  color: #fff;
   letter-spacing: -2px;
   background-color: #000;
-  flex-flow: row;
+  border: 2px solid transparent; /* Set initial border */
+  justify-content: space-between; /* Pushes icon to the right */
+  align-items: center; /* Center items vertically */
   width: 200px;
   padding: 10px;
   font-family: var(--font-roboto), sans-serif;
@@ -219,6 +220,7 @@ h3 {
   line-height: 100%;
   text-decoration: none;
   display: flex;
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Add transitions */
 }
 
 .h2-heading {
@@ -257,6 +259,7 @@ h3 {
   font-size: 1.7rem;
   line-height: 1.25rem;
   display: flex;
+  cursor: pointer;
 }
 
 .event-details-speakers-grid {
@@ -269,7 +272,8 @@ h3 {
 }
 
 .speaker-card {
-  border: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
   flex-flow: column;
   justify-content: space-around;
   align-self: center;
@@ -277,6 +281,18 @@ h3 {
   width: 100%;
   height: 425px;
   display: flex;
+}
+
+.speaker-card:nth-child(odd) {
+  border-left: 2px solid #000;
+}
+
+.speaker-card:nth-child(-n + 2) {
+  border-top: 2px solid #000;
+}
+
+.speaker-card:last-child:nth-child(odd) {
+  grid-column: span 2;
 }
 
 .speaker-name {
@@ -412,7 +428,7 @@ h3 {
 }
 
 .testimonials-card {
-  border: 2px solid #000;
+  background-color: white;
   flex-flow: column;
   justify-content: space-around;
   align-self: center;
@@ -432,7 +448,7 @@ h3 {
 }
 
 .news-block {
-  border: 2px solid #000;
+  background-color: white;
   width: 100%;
 }
 
@@ -696,6 +712,7 @@ h3 {
 .product-card-name {
   border: 2px solid #000;
   flex-flow: column;
+  background-color: white;
   justify-content: space-around;
   align-self: center;
   align-items: flex-start;
@@ -744,6 +761,7 @@ h3 {
 
 .metric-card {
   border: 2px solid #000;
+  background-color: white;
   flex-flow: column;
   justify-content: space-around;
   align-self: center;
@@ -791,7 +809,9 @@ h3 {
 }
 
 .funding-information {
-  border: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
@@ -1139,12 +1159,16 @@ h3 {
     font-size: 1.25rem;
   }
 
+  .button-blocks {
+    margin-bottom: 50px;
+  }
+
   .image-holder {
     display: none;
   }
 
   .product-card-pricing-holder {
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 30px;
   }
 
@@ -1215,8 +1239,26 @@ h3 {
   }
 
   .event-details-speakers-testomonials,
+  .event-details-speakers-grid,
   .metrics-grid {
     grid-template-columns: 1fr;
+  }
+
+  .event-details-speakers-grid .speaker-card {
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+  }
+
+  .event-details-speakers-grid .speaker-card:first-child {
+    border-top: 2px solid #000;
+  }
+
+  .event-details-speakers-grid .speaker-card:last-child {
+    grid-column: span 1;
+  }
+
+  .event-details-speakers-grid .speaker-card:not(:first-child) {
+    border-top: none;
   }
 
   .metric-title {
@@ -1419,8 +1461,77 @@ h3 {
     line-height: 1.21rem;
   }
 }
-#w-node-_54fa2fc7-465b-6e5c-62fe-c42845714076-7d3bd18a {
+#company-info-holder {
   order: -9999;
   grid-area: span 1 / span 4 / span 1 / span 4;
   justify-self: stretch;
+}
+
+/* --- Custom overrides to ensure consistent 2px borders around cards --- */
+.metrics-grid,
+.event-details-speakers-testomonials {
+  padding: 2px;
+}
+
+.metrics-grid,
+.product-details-grid,
+.event-details-speakers-testomonials {
+  gap: 2px;
+  background-color: #000;
+}
+
+.product-grid-container,
+.news-container {
+  background-color: #000;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-card,
+.product-card-name,
+.product-card-pricing,
+.testimonials-card,
+.news-block {
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .testimonials-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+/* --- Button Icon and Hover Styles --- */
+.button-svg-icon {
+  flex-shrink: 0; /* Prevents the icon from shrinking */
+}
+
+.button .button-text,
+.button .button-svg-icon line {
+  transition: all 0.2s ease;
+}
+
+.button .button-text {
+  color: #fff;
+}
+
+.button .button-svg-icon line {
+  stroke: #fff;
+}
+
+/* Apply hover effects only on devices that can truly hover */
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-color: #fff;
+    border-color: #000;
+  }
+
+  .button:hover .button-text {
+    color: #000;
+  }
+
+  .button:hover .button-svg-icon line {
+    stroke: #000;
+  }
 }
