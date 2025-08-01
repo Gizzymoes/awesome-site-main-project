@@ -5,36 +5,7 @@ import SpecialEventSection from "../components/SpecialEventSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import NewsSection from "../components/NewsSection";
 import Footer from "../components/Footer";
-
-async function getData() {
-  const res = await fetch(process.env.API_URL, {
-    next: { revalidate: 3600 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-export async function generateMetadata() {
-  const data = await getData();
-  const company = data.Company || {};
-
-  return {
-    title: `${company.Name || "Awesome Company"} | Special Event`,
-    description:
-      company.Mission ||
-      "Join our special event to explore groundbreaking products and meet our expert speakers.",
-    openGraph: {
-      title: `${company.Name || "Awesome Company"} | Special Event`,
-      description:
-        company.Mission ||
-        "A special event to generate excitement around our latest products.",
-    },
-  };
-}
+import { getData } from "./layout";
 
 export default async function Home() {
   const data = await getData();

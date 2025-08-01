@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
+//Animation which counts up. grabbed from https://reactbits.dev/text-animations/count-up
 export default function CountUp({
   to,
   from = 0,

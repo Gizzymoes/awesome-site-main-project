@@ -42,6 +42,8 @@ export default function EventTabs({ employees, products, metrics }) {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className="tab-buttons"
+              role="tab"
+              aria-selected={isActive}
               animate={{
                 backgroundColor: isActive ? "#FF575A" : "#000",
                 color: isActive ? "#fff" : "#fff",

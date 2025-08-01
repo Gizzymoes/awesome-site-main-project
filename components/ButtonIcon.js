@@ -1,6 +1,7 @@
 // components/ButtonIcon.js
 import React from "react";
 
+//Custom button icon svg file to reuse
 export default function ButtonIcon() {
   return (
     <svg
