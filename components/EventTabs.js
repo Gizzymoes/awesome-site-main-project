@@ -202,7 +202,15 @@ export default function EventTabs({ employees, products, metrics }) {
                   <div className="div-block-7">
                     <div className="metric-title">Revenue Growth</div>
                     <div className="metric-number">
-                      <CountUp to={metrics.Revenue?.Growth || 0} duration={3} />
+                      <CountUp
+                        to={Number(
+                          String(metrics.Revenue?.Growth || "0").replace(
+                            /[^0-9.]/g,
+                            ""
+                          )
+                        )}
+                        duration={3}
+                      />
                       <span className="bolden-h2">%</span>
                     </div>
                   </div>
@@ -213,7 +221,7 @@ export default function EventTabs({ employees, products, metrics }) {
                     <div className="metric-number">
                       <span className="bolden-h2">
                         <CountUp
-                          to={metrics.CustomerSatisfaction || 0}
+                          to={Number(metrics.CustomerSatisfaction) || 0}
                           duration={3}
                         />
                       </span>
