@@ -305,7 +305,7 @@ h3 {
 }
 
 .button-text {
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   font-family: var(--font-roboto), sans-serif;
   font-size: 1.5rem;
   line-height: 100%;
@@ -314,7 +314,7 @@ h3 {
 }
 
 .button {
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   background-color: #000;
   border: 2px solid transparent; /* Set initial border */
   justify-content: space-between; /* Pushes icon to the right */
@@ -353,7 +353,7 @@ h3 {
 .tab-buttons {
   color: #000;
   text-align: center;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   background-color: #fff;
   border: 2px solid #000;
   justify-content: center;
@@ -430,7 +430,7 @@ h3 {
 .speaker-desc {
   color: #000;
   text-align: center;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   padding-top: 20px;
   padding-left: 42px;
   padding-right: 42px;
@@ -446,7 +446,7 @@ h3 {
 .testomonial-quote {
   color: #000;
   text-align: center;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   padding-left: 42px;
   padding-right: 42px;
   font-family: var(--font-roboto), sans-serif;
@@ -474,7 +474,7 @@ h3 {
 }
 
 .testomonial-product-used {
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   font-family: var(--font-roboto), sans-serif;
   font-size: 1.625rem;
   font-weight: 700;
@@ -487,7 +487,7 @@ h3 {
 
 .testomonial-company {
   color: #000;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   height: 28px;
   padding-left: 10px;
   padding-right: 10px;
@@ -575,7 +575,7 @@ h3 {
 .news-desc {
   color: #000;
   text-align: left;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: var(--font-roboto), sans-serif;
@@ -589,7 +589,7 @@ h3 {
 
 .news-button {
   color: #fff;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   background-color: #000;
   flex-flow: row;
   width: 400px;
@@ -714,7 +714,7 @@ h3 {
 .product-desc {
   color: #000;
   text-align: left;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   height: 100%;
   padding-top: 40px;
   padding-left: 18px;
@@ -769,7 +769,7 @@ h3 {
 .bullet-point {
   color: #000;
   text-align: left;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   padding-top: 0;
   padding-left: 20px;
   padding-right: 0;
@@ -904,7 +904,7 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   font-family: var(--font-plus_jakarta_sans), sans-serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 100%;
 }
